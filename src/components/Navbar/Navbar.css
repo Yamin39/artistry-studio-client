@@ -1,0 +1,23 @@
+.nav-right .active {
+  border: none;
+}
+
+.navLink-container .active,
+.nav-right .active {
+  background-color: transparent !important;
+  color: black !important;
+  border-bottom: 3px solid black;
+  border-radius: 0;
+}
+
+.dark .active {
+  color: white !important;
+  border-bottom: 3px solid white;
+}
+
+@media screen and (max-width: 1200px) {
+  .navLink-container a,
+  .navLink-container summary {
+    padding: 0.5rem;
+  }
+}
