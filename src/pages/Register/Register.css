@@ -1,5 +1,5 @@
 #register-container {
-  box-shadow: 0 0 28px #e2e0dc;
+  box-shadow: 0 0 15px #e2e0dc inset;
   border-top-left-radius: 3rem;
   border-bottom-right-radius: 3rem;
 }
