@@ -54,8 +54,8 @@ const Navbar = () => {
   );
   return (
     <nav className="bg-[#E2E0DC] dark:bg-[#040506] dark:text-white">
-      <div className="max-w-[1440px] w-10/12 mx-auto">
-        <div className="navbar justify-between">
+      <div className="max-w-[1440px] w-11/12 mx-auto py-3">
+        <div className="navbar px-0 justify-between">
           <div>
             <div className="dropdown">
               <div tabIndex={0} role="button" className="btn btn-ghost px-2 lg:hidden">
@@ -83,7 +83,7 @@ const Navbar = () => {
                 <div className="bg-gray-300 rounded-full cursor-pointer">
                   <img className="size-8 2xl:size-10 rounded-full object-cover" src={user.photoURL} alt="User" />
                 </div>
-                <button className="btn h-auto min-h-0 btn-error text-xs 2xl:text-base bg-secondary-color text-white py-2 xl:px-7  hover:bg-red-600">
+                <button className="btn h-auto min-h-0 dark:btn-outline btn-error rounded-sm text-xs 2xl:text-base bg-secondary-color text-white py-2 xl:px-7  hover:bg-red-600">
                   Logout
                 </button>
               </div>
@@ -91,13 +91,13 @@ const Navbar = () => {
               <div className="space-x-1 md:space-x-4 nav-right">
                 <NavLink
                   to="/login"
-                  className="login btn btn-outline h-auto min-h-0 text-xs 2xl:text-base border rounded-none dark:border-white dark:text-white py-2 xl:px-7"
+                  className="login btn btn-outline h-auto min-h-0 text-xs 2xl:text-base border rounded-sm dark:border-white dark:text-white py-2 xl:px-7"
                 >
                   Login
                 </NavLink>
                 <NavLink
                   to="/Register"
-                  className="login btn btn-neutral bg-[#B59460] dark:bg-white text-white dark:text-black dark:hover:brightness-90 hover:bg-transparent hover:text-black h-auto min-h-0 text-xs 2xl:text-base border border-[#B59460] hover:border-black rounded-none py-2 xl:px-7"
+                  className="login btn btn-neutral bg-[#B59460] dark:bg-white text-white dark:text-black dark:hover:brightness-90 hover:bg-transparent hover:text-black h-auto min-h-0 text-xs 2xl:text-base border border-[#B59460] hover:border-black rounded-sm py-2 xl:px-7"
                 >
                   Register
                 </NavLink>

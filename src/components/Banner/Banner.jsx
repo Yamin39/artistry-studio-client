@@ -46,7 +46,7 @@ const Banner = () => {
                 <h1 className="max-w-[50rem] text-2xl sm:text-4xl font-serif mt-2 sm:mt-4 mb-4 sm:mb-7">
                   Discover Your Creative Masterpiece: Unleash Artistic Brilliance with Our Exquisite Collection
                 </h1>
-                <a className="btn bg-[#B59460] dark:bg-transparent hover:bg-[#B59460] dark:hover:bg-white dark:hover:text-black hover:brightness-90 px-6 rounded-none text-lg font-medium text-white mb-10 lg:mb-0">
+                <a className="btn bg-[#B59460] dark:bg-transparent hover:bg-[#B59460] dark:hover:bg-white dark:hover:text-black hover:brightness-90 px-6 rounded-sm text-lg font-medium text-white mb-10 lg:mb-0">
                   Explore
                 </a>
               </div>
@@ -66,7 +66,7 @@ const Banner = () => {
                 <h1 className="max-w-[50rem] text-2xl sm:text-4xl font-serif mt-2 sm:mt-4 mb-4 sm:mb-7">
                   Brushstrokes of Inspiration: Where Creativity Meets Imagination and Ingenuity
                 </h1>
-                <a className="btn bg-[#B59460] dark:bg-transparent hover:bg-[#B59460] dark:hover:bg-white dark:hover:text-black hover:brightness-90 px-6 rounded-none text-lg font-medium text-white mb-10 lg:mb-0">
+                <a className="btn bg-[#B59460] dark:bg-transparent hover:bg-[#B59460] dark:hover:bg-white dark:hover:text-black hover:brightness-90 px-6 rounded-sm text-lg font-medium text-white mb-10 lg:mb-0">
                   Explore
                 </a>
               </div>
@@ -86,7 +86,7 @@ const Banner = () => {
                 <h1 className="max-w-[50rem] text-2xl sm:text-4xl font-serif mt-2 sm:mt-4 mb-4 sm:mb-7">
                   Canvas of Dreams: Step into a World Where Every Stroke Matters
                 </h1>
-                <a className="btn bg-[#B59460] dark:bg-transparent hover:bg-[#B59460] dark:hover:bg-white dark:hover:text-black hover:brightness-90 px-6 rounded-none text-lg font-medium text-white mb-10 lg:mb-0">
+                <a className="btn bg-[#B59460] dark:bg-transparent hover:bg-[#B59460] dark:hover:bg-white dark:hover:text-black hover:brightness-90 px-6 rounded-sm text-lg font-medium text-white mb-10 lg:mb-0">
                   Explore
                 </a>
               </div>
