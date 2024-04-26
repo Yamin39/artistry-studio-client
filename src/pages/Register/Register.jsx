@@ -4,7 +4,7 @@ import "./Register.css";
 const Register = () => {
   return (
     <div className="max-w-[1440px] lg:pr-20 w-11/12 mx-auto flex justify-center items-center py-10">
-      <div id="register-container" className="p-10 flex relative lg:w-[43rem]">
+      <div className="register-container p-10 flex relative lg:w-[43rem]">
         <div className="w-full sm:w-[26rem]">
           <div className="text-center space-y-2 mb-6">
             <h2 className="text-3xl font-bold">Register</h2>
@@ -27,7 +27,7 @@ const Register = () => {
             </Link>
           </p>
         </div>
-        <div className="hidden lg:flex absolute -right-[9rem] max-w-80 h-96 p-10 text-center rounded-xl flex-col justify-center items-center bg-[#E2E0DC] drop-shadow-2xl">
+        <div className="hidden lg:flex absolute -right-[9rem] top-1/2 -translate-y-1/2 max-w-80 h-96 p-10 text-center rounded-xl flex-col justify-center items-center bg-[#E2E0DC] drop-shadow-2xl">
           <h2 className="text-2xl font-semibold">Join the Artistic Community</h2>
           <p className="mt-4 text-gray-600">Unlock exclusive access to creative wonders. Join now for personalized experiences.</p>
         </div>
