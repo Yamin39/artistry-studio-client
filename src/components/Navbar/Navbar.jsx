@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const { pathname } = useLocation();
-  console.log(pathname);
-
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
@@ -42,8 +39,8 @@ const Navbar = () => {
       </li>
       <li>
         <details>
-          <summary className="dark:text-black md:dark:text-white">Themes</summary>
-          <ul className="p-2 dark:text-black">
+          <summary className="dark:text-black lg:dark:text-white">Themes</summary>
+          <ul className="z-10 p-2 dark:text-black">
             <li>
               <button onClick={() => handleTheme("light")}>Light</button>
             </li>
@@ -57,7 +54,7 @@ const Navbar = () => {
   );
   return (
     <nav className="bg-[#E2E0DC] dark:bg-[#040506] dark:text-white">
-      <div className="max-w-[1440px] w-10/12 mx-auto font-poppins">
+      <div className="max-w-[1440px] w-10/12 mx-auto">
         <div className="navbar justify-between">
           <div>
             <div className="dropdown">
@@ -66,7 +63,7 @@ const Navbar = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
                 </svg>
               </div>
-              <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+              <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-10 p-2 shadow bg-base-100 dark:text-black rounded-box w-52">
                 {links}
               </ul>
             </div>
@@ -94,13 +91,13 @@ const Navbar = () => {
               <div className="space-x-1 md:space-x-4 nav-right">
                 <NavLink
                   to="/login"
-                  className="login btn btn-outline h-auto min-h-0 text-xs 2xl:text-base border dark:border-white dark:text-white py-2 xl:px-7"
+                  className="login btn btn-outline h-auto min-h-0 text-xs 2xl:text-base border rounded-none dark:border-white dark:text-white py-2 xl:px-7"
                 >
                   Login
                 </NavLink>
                 <NavLink
                   to="/Register"
-                  className="login btn btn-neutral dark:bg-white dark:text-black dark:hover:brightness-90 hover:bg-transparent hover:text-black h-auto min-h-0 text-xs 2xl:text-base border py-2 xl:px-7"
+                  className="login btn btn-neutral bg-[#B59460] dark:bg-white text-white dark:text-black dark:hover:brightness-90 hover:bg-transparent hover:text-black h-auto min-h-0 text-xs 2xl:text-base border border-[#B59460] hover:border-black rounded-none py-2 xl:px-7"
                 >
                   Register
                 </NavLink>

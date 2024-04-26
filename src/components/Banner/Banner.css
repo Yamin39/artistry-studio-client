@@ -1,0 +1,19 @@
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: rgb(61, 61, 61);
+  font-size: 1.2rem !important;
+  font-weight: 900;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: rgb(61, 61, 61) !important;
+}
+
+.swiper-pagination-bullet-active,
+.swiper-pagination-bullet-active-next,
+.swiper-pagination-bullet-active-next-next,
+.swiper-pagination-bullet-active-prev-prev,
+.swiper-pagination-bullet-active-prev {
+  width: 0.6rem !important;
+  height: 0.6rem !important;
+}
