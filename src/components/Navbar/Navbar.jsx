@@ -6,7 +6,23 @@ const Navbar = () => {
   const { pathname } = useLocation();
   console.log(pathname);
 
+  const [theme, setTheme] = useState("light");
 
+  useEffect(() => {
+    if (theme === "dark") {
+      document.querySelector("body").classList.add("dark");
+    } else {
+      document.querySelector("body").classList.remove("dark");
+    }
+  }, [theme]);
+
+  const handleTheme = (mode) => {
+    if (mode === "dark") {
+      setTheme("dark");
+    } else if (mode === "light") {
+      setTheme("light");
+    }
+  };
 
   const user = false;
 
@@ -24,7 +40,19 @@ const Navbar = () => {
       <li>
         <NavLink to="/my-art-&-craft-list">My Art&Craft List</NavLink>
       </li>
-
+      <li>
+        <details>
+          <summary className="dark:text-black md:dark:text-white">Themes</summary>
+          <ul className="p-2 dark:text-black">
+            <li>
+              <button onClick={() => handleTheme("light")}>Light</button>
+            </li>
+            <li>
+              <button onClick={() => handleTheme("dark")}>Dark</button>
+            </li>
+          </ul>
+        </details>
+      </li>
     </>
   );
   return (
