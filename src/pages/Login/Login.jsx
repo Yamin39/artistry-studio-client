@@ -3,9 +3,57 @@ import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
+import useToast from "../../hooks/useToast";
 
 const Login = () => {
   const [passToggle, setPassToggle] = useState(false);
+  const { successToast, errorToast } = useToast();
+  const { logIn, logInWithGoogle, logInWithGithub } = useAuth();
+
+  // social login
+  const handleSocialLogin = (socialLogin) => {
+    socialLogin()
+      .then((result) => {
+        console.log(result.user);
+        successToast("Login Successful");
+      })
+      .catch((error) => console.log(error));
+  };
+
+  // login with email & pass
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    // email and pass verification
+    if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+      errorToast("Invalid email address");
+      return;
+    }
+
+    if (password.length < 6) {
+      errorToast("Password Length must be at least 6 character");
+      return;
+    }
+
+    // login
+    logIn(email, password)
+      .then((result) => {
+        console.log(result.user);
+        successToast("Login Successful");
+      })
+      .catch((error) => {
+        console.error(error);
+        if (/invalid-credential/.test(error.message)) {
+          errorToast("Email or Password is wrong");
+        } else {
+          errorToast(error.message);
+        }
+      });
+  };
   return (
     <div className="max-w-[1440px] lg:pl-20 w-11/12 mx-auto flex justify-center items-center py-10">
       <div
@@ -21,7 +69,7 @@ const Login = () => {
             <h2 className="text-3xl font-bold">Login</h2>
             <p className="text-gray-600">Login to your account</p>
           </div>
-          <form className="flex flex-col space-y-3 w-full">
+          <form onSubmit={handleLogin} className="flex flex-col space-y-3 w-full">
             <input type="email" name="email" placeholder="Enter email address*" className="input bg-[#F5F5F5] rounded-sm w-full" required />
             <div className="relative">
               <input
@@ -45,11 +93,11 @@ const Login = () => {
             <hr className="flex-1 border-b border-b-gray-200" />
           </div>
           <div className="flex gap-4 justify-center">
-            <button className="flex-1 btn btn-outline px-6 rounded-sm text-lg font-medium mb-10 lg:mb-0">
+            <button onClick={() => handleSocialLogin(logInWithGoogle)} className="flex-1 btn btn-outline px-6 rounded-sm text-lg font-medium mb-10 lg:mb-0">
               <FcGoogle />
               Google
             </button>
-            <button className="flex-1 btn btn-outline px-6 rounded-sm text-lg font-medium mb-10 lg:mb-0">
+            <button onClick={() => handleSocialLogin(logInWithGithub)} className="flex-1 btn btn-outline px-6 rounded-sm text-lg font-medium mb-10 lg:mb-0">
               <FaGithub />
               GitHub
             </button>
