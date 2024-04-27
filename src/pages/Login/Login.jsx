@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { FiEye, FiEyeOff } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useToast from "../../hooks/useToast";
 
@@ -10,6 +10,8 @@ const Login = () => {
   const [passToggle, setPassToggle] = useState(false);
   const { successToast, errorToast } = useToast();
   const { logIn, logInWithGoogle, logInWithGithub } = useAuth();
+  const { state } = useLocation();
+  const navigate = useNavigate();
 
   // social login
   const handleSocialLogin = (socialLogin) => {
@@ -17,6 +19,7 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         successToast("Login Successful");
+        navigate(state || "/");
       })
       .catch((error) => console.log(error));
   };
@@ -44,6 +47,7 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         successToast("Login Successful");
+        navigate(state || "/");
       })
       .catch((error) => {
         console.error(error);
