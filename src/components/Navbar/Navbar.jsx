@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import useToast from "../../hooks/useToast";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const { user, loading } = useAuth();
+  const { user, loading, logOut } = useAuth();
+  const { successToast } = useToast();
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
@@ -53,7 +55,16 @@ const Navbar = () => {
     </>
   );
 
-
+  const handleLogOut = () => {
+    logOut()
+      .then((result) => {
+        console.log(result);
+        successToast("Successfully logged out");
+      })
+      .then((error) => {
+        console.log(error);
+      });
+  };
   return (
     <nav className="bg-[#E2E0DC] dark:bg-[#040506] dark:text-white">
       <div className="max-w-[1440px] w-11/12 mx-auto py-3">
@@ -92,6 +103,7 @@ const Navbar = () => {
                     <img className="size-8 2xl:size-10 rounded-full object-cover" src={user.photoURL} alt="User" />
                   </div>
                   <button
+                    onClick={handleLogOut}
                     className="btn h-auto min-h-0 dark:btn-outline btn-error rounded-sm text-xs 2xl:text-base bg-secondary-color text-white py-2 xl:px-7  hover:bg-red-600"
                   >
                     Logout
