@@ -6,7 +6,7 @@ import useToast from "../../hooks/useToast";
 import "./Register.css";
 
 const Register = () => {
-  const { createUser, updateUserProfile, setLoading } = useAuth();
+  const { createUser, updateUserProfile, setLoading, setProfileLoader } = useAuth();
   const { successToast, errorToast } = useToast();
   const [passToggle, setPassToggle] = useState(false);
   const navigate = useNavigate();
@@ -47,6 +47,7 @@ const Register = () => {
         updateUserProfile(result.user, name, photoURL)
           .then((res) => {
             console.log(res);
+            setProfileLoader(true);
             successToast("Registration Successful");
             navigate("/");
           })

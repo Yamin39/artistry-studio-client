@@ -17,6 +17,7 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [profileLoader, setProfileLoader] = useState(false);
 
   // login with email & pass
   const logIn = (email, password) => {
@@ -61,12 +62,13 @@ const AuthProvider = ({ children }) => {
       setLoading(false);
     });
     return () => unSubscribe();
-  }, []);
+  }, [profileLoader]);
 
   const authContextInfo = {
     user,
     loading,
     setLoading,
+    setProfileLoader,
     logIn,
     logInWithGoogle,
     logInWithGithub,
