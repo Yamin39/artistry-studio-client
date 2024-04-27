@@ -8,10 +8,11 @@ import "./Navbar.css";
 const Navbar = () => {
   const { user, loading, logOut } = useAuth();
   const { successToast } = useToast();
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(null);
 
   useEffect(() => {
-    if (theme === "dark") {
+    const selectedTheme = localStorage.getItem("theme");
+    if (selectedTheme === "dark") {
       document.querySelector("body").classList.add("dark");
     } else {
       document.querySelector("body").classList.remove("dark");
@@ -19,6 +20,7 @@ const Navbar = () => {
   }, [theme]);
 
   const handleTheme = (mode) => {
+    localStorage.setItem("theme", mode);
     if (mode === "dark") {
       setTheme("dark");
     } else if (mode === "light") {
