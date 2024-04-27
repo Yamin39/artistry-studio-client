@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { Tooltip } from "react-tooltip";
 import useAuth from "../../hooks/useAuth";
 import useToast from "../../hooks/useToast";
 import "./Navbar.css";
@@ -99,9 +100,14 @@ const Navbar = () => {
             <div>
               {user ? (
                 <div className="flex gap-3 justify-center items-center">
-                  <div className="bg-gray-300 rounded-full cursor-pointer">
+                  <a
+                    data-tooltip-id="my-tooltip"
+                    data-tooltip-content={user.displayName || "Name not found"}
+                    data-tooltip-place="bottom"
+                    className="bg-gray-300 rounded-full cursor-pointer"
+                  >
                     <img className="size-8 2xl:size-10 rounded-full object-cover" src={user.photoURL} alt="User" />
-                  </div>
+                  </a>
                   <button
                     onClick={handleLogOut}
                     className="btn h-auto min-h-0 dark:btn-outline btn-error rounded-sm text-xs 2xl:text-base bg-secondary-color text-white py-2 xl:px-7  hover:bg-red-600"
@@ -129,6 +135,7 @@ const Navbar = () => {
           )}
         </div>
       </div>
+      <Tooltip className="max-w-56 lg:max-w-96 z-10" id="my-tooltip" />
     </nav>
   );
 };
