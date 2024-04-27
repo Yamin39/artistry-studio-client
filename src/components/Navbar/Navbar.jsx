@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 import "./Navbar.css";
 
 const Navbar = () => {
+  const { user, loading } = useAuth();
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
@@ -20,8 +22,6 @@ const Navbar = () => {
       setTheme("light");
     }
   };
-
-  const user = false;
 
   const links = (
     <>
@@ -52,6 +52,8 @@ const Navbar = () => {
       </li>
     </>
   );
+
+
   return (
     <nav className="bg-[#E2E0DC] dark:bg-[#040506] dark:text-white">
       <div className="max-w-[1440px] w-11/12 mx-auto py-3">
@@ -77,33 +79,42 @@ const Navbar = () => {
             <ul className="navLink-container menu menu-horizontal gap-1 2xl:gap-2 2xl:px-1 font-medium text-xs 2xl:text-base">{links}</ul>
           </div>
 
-          <div>
-            {user ? (
-              <div className="flex gap-3 justify-center items-center">
-                <div className="bg-gray-300 rounded-full cursor-pointer">
-                  <img className="size-8 2xl:size-10 rounded-full object-cover" src={user.photoURL} alt="User" />
+          {loading ? (
+            <div className="btn btn-ghost">
+              <span className="loading loading-spinner"></span>
+              loading...
+            </div>
+          ) : (
+            <div>
+              {user ? (
+                <div className="flex gap-3 justify-center items-center">
+                  <div className="bg-gray-300 rounded-full cursor-pointer">
+                    <img className="size-8 2xl:size-10 rounded-full object-cover" src={user.photoURL} alt="User" />
+                  </div>
+                  <button
+                    className="btn h-auto min-h-0 dark:btn-outline btn-error rounded-sm text-xs 2xl:text-base bg-secondary-color text-white py-2 xl:px-7  hover:bg-red-600"
+                  >
+                    Logout
+                  </button>
                 </div>
-                <button className="btn h-auto min-h-0 dark:btn-outline btn-error rounded-sm text-xs 2xl:text-base bg-secondary-color text-white py-2 xl:px-7  hover:bg-red-600">
-                  Logout
-                </button>
-              </div>
-            ) : (
-              <div className="space-x-1 md:space-x-4 nav-right">
-                <NavLink
-                  to="/login"
-                  className="login btn btn-outline h-auto min-h-0 text-xs 2xl:text-base border rounded-sm dark:border-white dark:text-white py-2 xl:px-7"
-                >
-                  Login
-                </NavLink>
-                <NavLink
-                  to="/Register"
-                  className="login btn btn-neutral bg-[#B59460] dark:bg-white text-white dark:text-black dark:hover:brightness-90 hover:bg-transparent hover:text-black h-auto min-h-0 text-xs 2xl:text-base border border-[#B59460] hover:border-black rounded-sm py-2 xl:px-7"
-                >
-                  Register
-                </NavLink>
-              </div>
-            )}
-          </div>
+              ) : (
+                <div className="space-x-1 md:space-x-4 nav-right">
+                  <NavLink
+                    to="/login"
+                    className="login btn btn-outline h-auto min-h-0 text-xs 2xl:text-base border rounded-sm dark:border-white dark:text-white py-2 xl:px-7"
+                  >
+                    Login
+                  </NavLink>
+                  <NavLink
+                    to="/Register"
+                    className="login btn btn-neutral bg-[#B59460] dark:bg-white text-white dark:text-black dark:hover:brightness-90 hover:bg-transparent hover:text-black h-auto min-h-0 text-xs 2xl:text-base border border-[#B59460] hover:border-black rounded-sm py-2 xl:px-7"
+                  >
+                    Register
+                  </NavLink>
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </nav>

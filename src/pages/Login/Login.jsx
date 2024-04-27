@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 const Login = () => {
+  const [passToggle, setPassToggle] = useState(false);
   return (
     <div className="max-w-[1440px] lg:pl-20 w-11/12 mx-auto flex justify-center items-center py-10">
       <div
@@ -19,8 +22,19 @@ const Login = () => {
             <p className="text-gray-600">Login to your account</p>
           </div>
           <form className="flex flex-col space-y-3 w-full">
-            <input type="email" name="email" placeholder="Enter email address*" className="input bg-[#F5F5F5] rounded-sm w-full" />
-            <input type="password" name="password" placeholder="Enter password*" className="input bg-[#F5F5F5] rounded-sm w-full" />
+            <input type="email" name="email" placeholder="Enter email address*" className="input bg-[#F5F5F5] rounded-sm w-full" required />
+            <div className="relative">
+              <input
+                type={passToggle ? "text" : "password"}
+                name="password"
+                placeholder="Enter password*"
+                className="input bg-[#F5F5F5] rounded-sm w-full"
+                required
+              />
+              <div onClick={() => setPassToggle(!passToggle)} className="absolute top-0 right-3 translate-y-1/2 text-[1.4rem] cursor-pointer bg-[#F5F5F5]">
+                {passToggle ? <FiEyeOff /> : <FiEye />}
+              </div>
+            </div>
             <button className="btn bg-[#B59460] hover:bg-[#B59460] hover:brightness-90 px-6 rounded-sm text-lg font-medium text-white mb-10 lg:mb-0">
               Login
             </button>
