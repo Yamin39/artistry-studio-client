@@ -56,7 +56,6 @@ const AddCraftItem = () => {
     <div className="max-w-[1440px] w-10/12 mx-auto">
       <div className="my-8 text-center">
         <h2 className="font-bold font-serif text-3xl">Add an art & craft item</h2>
-        <p className="max-w-[15.625rem] mx-auto text-gray-600">Fill up and submit the form to add a new item</p>
       </div>
 
       <form onSubmit={handleAddCraftItem} className="bg-[#e2e0dc4b] shadow-xl p-6 rounded-lg max-w-3xl mx-auto mb-8">
