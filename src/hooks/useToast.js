@@ -28,7 +28,20 @@ const useToast = () => {
       transition: Flip,
     });
 
-  return { successToast, errorToast };
+  const warningToast = (sms) =>
+    toast.warn(sms, {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Flip,
+    });
+
+  return { successToast, errorToast, warningToast };
 };
 
 export default useToast;
