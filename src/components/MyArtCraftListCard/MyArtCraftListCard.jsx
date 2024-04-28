@@ -1,4 +1,6 @@
+import PropTypes from "prop-types";
 import { TiStarFullOutline } from "react-icons/ti";
+
 const MyArtCraftListCard = ({ myArtCraft }) => {
   const { _id, imageURL, name, price, rating, customization, stockStatus } = myArtCraft;
   return (
@@ -37,6 +39,10 @@ const MyArtCraftListCard = ({ myArtCraft }) => {
       </div>
     </div>
   );
+};
+
+MyArtCraftListCard.propTypes = {
+  myArtCraft: PropTypes.object,
 };
 
 export default MyArtCraftListCard;
