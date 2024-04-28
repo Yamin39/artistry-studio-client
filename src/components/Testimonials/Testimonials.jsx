@@ -1,6 +1,6 @@
 const Testimonials = () => {
   return (
-    <div className="py-20 dark:text-white">
+    <div className="pt-10 pb-20 dark:text-white">
       <div className="mb-14 text-center">
         <h2 className="font-bold font-serif text-5xl">Testimonials</h2>
       </div>

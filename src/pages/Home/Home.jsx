@@ -1,3 +1,4 @@
+import AboutUs from "../../components/AboutUs/AboutUs";
 import Banner from "../../components/Banner/Banner";
 import CraftItems from "../../components/CraftItems/CraftItems";
 import Testimonials from "../../components/Testimonials/Testimonials";
@@ -10,6 +11,7 @@ const Home = () => {
         <CraftItems></CraftItems>
         <Testimonials></Testimonials>
       </div>
+      <AboutUs></AboutUs>
     </div>
   );
 };
