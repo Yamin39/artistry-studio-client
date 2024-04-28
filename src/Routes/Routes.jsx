@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../layout/Root";
 import AddCraftItem from "../pages/AddCraftItem/AddCraftItem";
+import AllArtsCraftsItems from "../pages/AllArtsCraftsItems/AllArtsCraftsItems";
 import CraftItemDetails from "../pages/CraftItemDetails/CraftItemDetails";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Home from "../pages/Home/Home";
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
             <CraftItemDetails></CraftItemDetails>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/all-art-&-craft-items",
+        element: <AllArtsCraftsItems></AllArtsCraftsItems>,
       },
     ],
   },

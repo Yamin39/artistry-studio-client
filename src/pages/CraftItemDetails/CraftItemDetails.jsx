@@ -1,3 +1,4 @@
+import { FaStar } from "react-icons/fa6";
 import { useLoaderData } from "react-router-dom";
 
 const CraftItemDetails = () => {
@@ -13,14 +14,8 @@ const CraftItemDetails = () => {
           <h2 className="text-3xl font-semibold">{name}</h2>
           <p className="text-2xl mt-2 font-medium">${price}</p>
 
-          <div className="flex gap-2 items-center mt-2">
-            <div className="rating">
-              <input type="radio" name="rating-1" className="mask mask-star" />
-              <input type="radio" name="rating-1" className="mask mask-star" />
-              <input type="radio" name="rating-1" className="mask mask-star" />
-              <input type="radio" name="rating-1" className="mask mask-star" defaultChecked />
-              <input type="radio" name="rating-1" className="mask mask-star" />
-            </div>
+          <div className="flex gap-1 items-center mt-2">
+            <FaStar className="text-xl" />
             <p className="text-xl font-medium">{rating}</p>
           </div>
 
