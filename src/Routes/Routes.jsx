@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../layout/Root";
 import AddCraftItem from "../pages/AddCraftItem/AddCraftItem";
+import CraftItemDetails from "../pages/CraftItemDetails/CraftItemDetails";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
@@ -30,6 +31,15 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AddCraftItem></AddCraftItem>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/craft-items/:id",
+        loader: ({ params }) => fetch(`http://localhost:5000/craft-items/${params.id}`),
+        element: (
+          <PrivateRoute>
+            <CraftItemDetails></CraftItemDetails>
           </PrivateRoute>
         ),
       },
