@@ -6,6 +6,7 @@ import CraftItemDetails from "../pages/CraftItemDetails/CraftItemDetails";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
+import MyArtCraftList from "../pages/MyArtCraftList/MyArtCraftList";
 import Register from "../pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 
@@ -47,6 +48,14 @@ const router = createBrowserRouter([
       {
         path: "/all-art-&-craft-items",
         element: <AllArtsCraftsItems></AllArtsCraftsItems>,
+      },
+      {
+        path: "/my-art-&-craft-list",
+        element: (
+          <PrivateRoute>
+            <MyArtCraftList></MyArtCraftList>
+          </PrivateRoute>
+        ),
       },
     ],
   },

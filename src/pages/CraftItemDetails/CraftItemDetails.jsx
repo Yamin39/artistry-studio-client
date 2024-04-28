@@ -43,7 +43,7 @@ const CraftItemDetails = () => {
             <h4 className="text-xl underline font-semibold">Author details:</h4>
             <ul className="mt-1">
               <li>
-                <span className="font-semibold text-lg">User email:</span> {user_email}
+                <span className="font-semibold text-lg">User email:</span> {user_email || "Not found"}
               </li>
               <li>
                 <span className="font-semibold text-lg">User name:</span> {user_name}
