@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 import useAuth from "../../hooks/useAuth";
 import useToast from "../../hooks/useToast";
 
@@ -50,7 +51,27 @@ const AddCraftItem = () => {
       return;
     }
 
-    console.log(itemData);
+    // send data to the server
+    fetch("http://localhost:5000/craft-items", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(itemData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Craft Item added successfully",
+            icon: "success",
+            confirmButtonText: "Ok",
+          });
+          form.reset();
+        }
+      });
   };
   return (
     <div className="max-w-[1440px] w-10/12 mx-auto">
