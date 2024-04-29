@@ -1,8 +1,39 @@
 import PropTypes from "prop-types";
 import { TiStarFullOutline } from "react-icons/ti";
+import Swal from "sweetalert2";
 
-const MyArtCraftListCard = ({ myArtCraft }) => {
+const MyArtCraftListCard = ({ myArtCraft, getCraftList }) => {
   const { _id, imageURL, name, price, rating, customization, stockStatus } = myArtCraft;
+
+  const handleDelete = (_id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "This item will be deleted permanently and cannot be reverted!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        console.log(`Delete ${_id}`);
+
+        fetch(`http://localhost:5000/craft-items/${_id}`, { method: "DELETE" })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Craft item deleted successfully.",
+                icon: "success",
+              });
+              getCraftList();
+            }
+          });
+      }
+    });
+  };
   return (
     <div className="p-4 rounded flex flex-col justify-between" style={{ boxShadow: "0 0 10px 10px #a1a1a121" }}>
       <div>
@@ -35,7 +66,9 @@ const MyArtCraftListCard = ({ myArtCraft }) => {
 
       <div className="flex gap-4">
         <button className="flex-1 btn text-base mt-4 text-white bg-[#B59460] hover:bg-[#B59460] hover:brightness-90 border-none rounded">Update</button>
-        <button className="flex-1 btn btn-error text-base mt-4 text-white border-none rounded">Delete</button>
+        <button onClick={() => handleDelete(_id)} className="flex-1 btn btn-error text-base mt-4 text-white border-none rounded">
+          Delete
+        </button>
       </div>
     </div>
   );
@@ -43,6 +76,7 @@ const MyArtCraftListCard = ({ myArtCraft }) => {
 
 MyArtCraftListCard.propTypes = {
   myArtCraft: PropTypes.object,
+  getCraftList: PropTypes.func,
 };
 
 export default MyArtCraftListCard;

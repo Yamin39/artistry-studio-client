@@ -9,13 +9,18 @@ const MyArtCraftList = () => {
   const [myArtCraftList, setMyArtCraftList] = useState([]);
   const [loader, setLoader] = useState(true);
 
-  useEffect(() => {
+  const getCraftList = () => {
+    setLoader(true);
     fetch(`http://localhost:5000/my-art-&-craft-list/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyArtCraftList(data);
         setLoader(false);
       });
+  };
+
+  useEffect(() => {
+    getCraftList();
   }, []);
 
   return (
@@ -31,7 +36,7 @@ const MyArtCraftList = () => {
       ) : (
         <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-16">
           {myArtCraftList.map((myArtCraft) => (
-            <MyArtCraftListCard key={myArtCraft._id} myArtCraft={myArtCraft}></MyArtCraftListCard>
+            <MyArtCraftListCard key={myArtCraft._id} myArtCraft={myArtCraft} getCraftList={getCraftList}></MyArtCraftListCard>
           ))}
         </div>
       )}
