@@ -8,6 +8,7 @@ import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import MyArtCraftList from "../pages/MyArtCraftList/MyArtCraftList";
 import Register from "../pages/Register/Register";
+import UpdateCraft from "../pages/UpdateCraft/UpdateCraft";
 import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
@@ -54,6 +55,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <MyArtCraftList></MyArtCraftList>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/update-craft/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateCraft></UpdateCraft>
           </PrivateRoute>
         ),
       },

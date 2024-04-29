@@ -88,7 +88,7 @@ const AddCraftItem = () => {
           {/* name */}
           <div className="flex flex-col flex-1 mt-4 space-y-2">
             <label htmlFor="name" className="text-lg font-medium text-gray-600">
-              Name
+              Item Name
             </label>
             <input type="text" id="name" name="name" placeholder="Enter item's name" className="input w-full input-bordered bg-[#ffffff83]" required />
           </div>

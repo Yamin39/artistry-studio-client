@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { TiStarFullOutline } from "react-icons/ti";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MyArtCraftListCard = ({ myArtCraft, getCraftList }) => {
@@ -65,7 +66,12 @@ const MyArtCraftListCard = ({ myArtCraft, getCraftList }) => {
       </div>
 
       <div className="flex gap-4">
-        <button className="flex-1 btn text-base mt-4 text-white bg-[#B59460] hover:bg-[#B59460] hover:brightness-90 border-none rounded">Update</button>
+        <Link
+          to={`/update-craft/${_id}`}
+          className="flex-1 btn text-base mt-4 text-white bg-[#B59460] hover:bg-[#B59460] hover:brightness-90 border-none rounded"
+        >
+          Update
+        </Link>
         <button onClick={() => handleDelete(_id)} className="flex-1 btn btn-error text-base mt-4 text-white border-none rounded">
           Delete
         </button>
