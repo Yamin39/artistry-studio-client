@@ -8,7 +8,7 @@ const CraftItems = () => {
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/craft-items")
+    fetch("https://artistry-studio-server.vercel.app/craft-items")
       .then((res) => res.json())
       .then((data) => {
         setCraftItems(data);

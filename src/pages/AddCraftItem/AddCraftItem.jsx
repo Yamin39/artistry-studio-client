@@ -52,7 +52,7 @@ const AddCraftItem = () => {
     }
 
     // send data to the server
-    fetch("http://localhost:5000/craft-items", {
+    fetch("https://artistry-studio-server.vercel.app/craft-items", {
       method: "POST",
       headers: {
         "content-type": "application/json",

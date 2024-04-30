@@ -11,7 +11,7 @@ const SubcategorizedCrafts = () => {
 
   useEffect(() => {
     setLoader(true);
-    fetch(`http://localhost:5000/subcategories/${subcategory_name}`)
+    fetch(`https://artistry-studio-server.vercel.app/subcategories/${subcategory_name}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

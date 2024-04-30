@@ -18,7 +18,7 @@ const UpdateCraft = () => {
 
   const getCrafts = () => {
     setLoader(true);
-    fetch(`http://localhost:5000/craft-items/${id}`)
+    fetch(`https://artistry-studio-server.vercel.app/craft-items/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setMyCraft(data);
@@ -75,7 +75,7 @@ const UpdateCraft = () => {
 
     // update data in the database
 
-    fetch(`http://localhost:5000/craft-items/${id}`, {
+    fetch(`https://artistry-studio-server.vercel.app/craft-items/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

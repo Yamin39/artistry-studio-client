@@ -11,7 +11,7 @@ const CraftItemDetails = () => {
 
   useEffect(() => {
     setLoader(true);
-    fetch(`http://localhost:5000/craft-items/${id}`)
+    fetch(`https://artistry-studio-server.vercel.app/craft-items/${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

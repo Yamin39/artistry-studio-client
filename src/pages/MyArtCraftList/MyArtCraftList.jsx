@@ -11,7 +11,7 @@ const MyArtCraftList = () => {
 
   const getCraftList = () => {
     setLoader(true);
-    fetch(`http://localhost:5000/my-art-&-craft-list/${user.email}`)
+    fetch(`https://artistry-studio-server.vercel.app/my-art-&-craft-list/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyArtCraftList(data);
@@ -25,7 +25,7 @@ const MyArtCraftList = () => {
 
   const handleFilter = (status) => {
     setLoader(true);
-    fetch(`http://localhost:5000/my-art-&-craft-list/${user.email}/${status}`)
+    fetch(`https://artistry-studio-server.vercel.app/my-art-&-craft-list/${user.email}/${status}`)
       .then((res) => res.json())
       .then((data) => {
         setMyArtCraftList(data);

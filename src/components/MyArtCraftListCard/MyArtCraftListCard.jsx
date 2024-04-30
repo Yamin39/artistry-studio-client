@@ -19,7 +19,7 @@ const MyArtCraftListCard = ({ myArtCraft, getCraftList }) => {
       if (result.isConfirmed) {
         console.log(`Delete ${_id}`);
 
-        fetch(`http://localhost:5000/craft-items/${_id}`, { method: "DELETE" })
+        fetch(`https://artistry-studio-server.vercel.app/craft-items/${_id}`, { method: "DELETE" })
           .then((res) => res.json())
           .then((data) => {
             console.log(data);

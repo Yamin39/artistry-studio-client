@@ -9,7 +9,7 @@ const ArtCraftCategories = () => {
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/subcategories")
+    fetch("https://artistry-studio-server.vercel.app/subcategories")
       .then((res) => res.json())
       .then((data) => {
         setSubcategories(data);
