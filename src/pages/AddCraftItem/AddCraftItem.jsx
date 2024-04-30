@@ -70,6 +70,7 @@ const AddCraftItem = () => {
             confirmButtonText: "Ok",
           });
           form.reset();
+          e.target.subcategory_name.value = "Choose";
         }
       });
   };

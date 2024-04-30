@@ -8,6 +8,7 @@ import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import MyArtCraftList from "../pages/MyArtCraftList/MyArtCraftList";
 import Register from "../pages/Register/Register";
+import SubcategorizedCrafts from "../pages/SubcategorizedCrafts/SubcategorizedCrafts";
 import UpdateCraft from "../pages/UpdateCraft/UpdateCraft";
 import PrivateRoute from "./PrivateRoute";
 
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
             <UpdateCraft></UpdateCraft>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/subcategories/:subcategory_name",
+        element: <SubcategorizedCrafts></SubcategorizedCrafts>,
       },
     ],
   },
