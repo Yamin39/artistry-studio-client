@@ -1,8 +1,29 @@
-# React + Vite
+# Artistry Studio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to Artistry Studio
 
-Currently, two official plugins are available:
+## Live Site
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+live site URL: [Artistry Studio](https://artistry-studio-yamin39.web.app/)
+
+## Features and Characteristics
+
+Artistry Studio have many features and characteristics. Such as,
+
+- Variety of craft items are found from different categories.
+- Artistry Studio have a dedicated page to see property details.
+- User can Register and login to their account. There are also easy login methods available like Google or GitHub.
+- Logged-in users can add arts and craft items.
+- Each users can update and delete the arts and craft items they have added.
+- Artistry Studio also support light and dark in the home page. 
+
+## Website Category's name is Painting and Drawing
+
+## Sub categories are:
+
+- Landscape Painting
+- Portrait Drawing
+- Watercolor Painting
+- Oil Painting
+- Charcoal Sketching
+- Cartoon Drawing

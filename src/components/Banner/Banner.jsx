@@ -12,6 +12,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 // import required modules
+import { Link } from "react-router-dom";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 const Banner = () => {
@@ -46,9 +47,12 @@ const Banner = () => {
                 <h1 className="max-w-[50rem] text-2xl sm:text-4xl font-serif mt-2 sm:mt-4 mb-4 sm:mb-7">
                   Discover Your Creative Masterpiece: Unleash Artistic Brilliance with Our Exquisite Collection
                 </h1>
-                <a className="btn bg-[#B59460] dark:bg-transparent hover:bg-[#B59460] dark:hover:bg-white dark:hover:text-black hover:brightness-90 px-6 rounded-sm text-lg font-medium text-white mb-10 lg:mb-0">
-                  Explore
-                </a>
+                <Link
+                  to="/login"
+                  className="btn bg-[#B59460] dark:bg-transparent hover:bg-[#B59460] dark:hover:bg-white dark:hover:text-black hover:brightness-90 px-6 rounded-sm text-lg font-medium text-white mb-10 lg:mb-0"
+                >
+                  Login
+                </Link>
               </div>
               <div>
                 <div className="max-w-[12.5rem] sm:max-w-[15.625rem] lg:max-w-[31.25rem]">
@@ -66,9 +70,12 @@ const Banner = () => {
                 <h1 className="max-w-[50rem] text-2xl sm:text-4xl font-serif mt-2 sm:mt-4 mb-4 sm:mb-7">
                   Brushstrokes of Inspiration: Where Creativity Meets Imagination and Ingenuity
                 </h1>
-                <a className="btn bg-[#B59460] dark:bg-transparent hover:bg-[#B59460] dark:hover:bg-white dark:hover:text-black hover:brightness-90 px-6 rounded-sm text-lg font-medium text-white mb-10 lg:mb-0">
-                  Explore
-                </a>
+                <Link
+                  to="/login"
+                  className="btn bg-[#B59460] dark:bg-transparent hover:bg-[#B59460] dark:hover:bg-white dark:hover:text-black hover:brightness-90 px-6 rounded-sm text-lg font-medium text-white mb-10 lg:mb-0"
+                >
+                  Login
+                </Link>
               </div>
               <div>
                 <div className="max-w-[12.5rem] sm:max-w-[15.625rem] lg:max-w-[31.25rem]">
@@ -86,9 +93,12 @@ const Banner = () => {
                 <h1 className="max-w-[50rem] text-2xl sm:text-4xl font-serif mt-2 sm:mt-4 mb-4 sm:mb-7">
                   Canvas of Dreams: Step into a World Where Every Stroke Matters
                 </h1>
-                <a className="btn bg-[#B59460] dark:bg-transparent hover:bg-[#B59460] dark:hover:bg-white dark:hover:text-black hover:brightness-90 px-6 rounded-sm text-lg font-medium text-white mb-10 lg:mb-0">
-                  Explore
-                </a>
+                <Link
+                  to="/login"
+                  className="btn bg-[#B59460] dark:bg-transparent hover:bg-[#B59460] dark:hover:bg-white dark:hover:text-black hover:brightness-90 px-6 rounded-sm text-lg font-medium text-white mb-10 lg:mb-0"
+                >
+                  Login
+                </Link>
               </div>
               <div>
                 <div className="max-w-[12.5rem] sm:max-w-[15.625rem] lg:max-w-[31.25rem]">
