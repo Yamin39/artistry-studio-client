@@ -6,9 +6,9 @@ Welcome to Artistry Studio
 
 live site URL: [Artistry Studio](https://artistry-studio-yamin39.web.app/)
 
-## Features and Characteristics
+## Features
 
-Artistry Studio have many features and characteristics. Such as,
+Artistry Studio have many features. Such as,
 
 - Variety of craft items are found from different categories.
 - Artistry Studio have a dedicated page to see property details.
