@@ -11,7 +11,7 @@
 - **Problem Solved**: It provides a centralized place for artists to showcase and manage their artworks, making it easier for users to explore and purchase unique art pieces.
 - **Technologies Used**: HTML, CSS, JavaScript, ReactJS, Firebase, Tailwind CSS, Daisy UI.
 - **Best Features**:
-  - User authentication with Google and GitHub login options.
+  - User authentication with Email-Password, Google and GitHub login options.
   - Ability for users to add, update, and delete their own art items.
   - Support for both light and dark modes on the homepage.
 
