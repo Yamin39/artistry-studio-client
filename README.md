@@ -11,9 +11,21 @@
 - **Problem Solved**: It provides a centralized place for artists to showcase and manage their artworks, making it easier for users to explore and purchase unique art pieces.
 - **Technologies Used**: HTML, CSS, JavaScript, ReactJS, Firebase, Tailwind CSS, Daisy UI.
 - **Best Features**:
-  - User authentication with Email-Password, Google and GitHub login options.
-  - Ability for users to add, update, and delete their own art items.
-  - Support for both light and dark modes on the homepage.
+  - Users can add, update, and delete their own art items.  
+  - Light and dark modes are available for better user experience.  
+  - Seamless browsing and management of art and craft items, focused on painting and drawing categories.
+- **Other Features**:
+  - Secure authentication using Firebase.  
+  - Centralized platform for showcasing and managing artworks.  
+  - Intuitive UI built with ReactJS and Tailwind CSS.
+
+## NPM Packages
+1. react-icons </br>  
+2. firebase </br>  
+3. react-router-dom </br>  
+4. tailwindcss </br>  
+5. daisyui </br>  
+6. react-hook-form </br>  
 
 ## Setup Process
 
